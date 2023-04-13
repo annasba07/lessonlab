@@ -18,7 +18,7 @@ const Index = () => {
       });
 
       setLessonPlan(response.data);
-      router.push('/results');
+      router.push('/result');
     } catch (error) {
       console.error('Error generating lesson:', error);
     }

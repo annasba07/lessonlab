@@ -16,7 +16,7 @@ def generate_lesson_plan(age, topic):
         {"role": "system", "content": "You are a highly creative teacher who loves designing fun engaging and age appropriate class curriculums."},
         {"role": "user", "content": user_input},
     ]
-
+    print('about to make a request')
     # Make a request to the Chat API
     response = openai.ChatCompletion.create(
         model=model_engine,
@@ -24,8 +24,10 @@ def generate_lesson_plan(age, topic):
     )
 
     
+    print('about to format')
     # Extract the assistant's reply
-    assistant_reply = response.choices[0].message["content"].strip()
+    assistant_reply = format_response(response.choices[0].message["content"].strip())
+
     session['initial_lesson_plan'] = assistant_reply
 
     # wait for 10 seconds
@@ -63,4 +65,5 @@ def generate_materials():
 
 
 def format_response(response_text):
+    print('formatting reponse')
     return response_text.replace('\n', '<br>')
