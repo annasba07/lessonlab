@@ -19,15 +19,15 @@ const Result = () => {
     <Layout>
       <div className="container mx-auto mt-16">
         <div className="flex justify-center">
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-2/2">
             <div className="bg-white shadow-md p-8 rounded">
               <h2 className="text-center mb-8 font-semibold text-2xl">Your Lesson Plan</h2>
               {/* Add your content here */}
               <div>
-                <pre>{JSON.stringify(lessonPlan, null, 2)}</pre>
+                
                 <div className="card-body">
                     <p className="card-text" id="lesson-plan-container">
-                        {JSON.stringify(lessonPlan, null, 2)}
+                        <div dangerouslySetInnerHTML={{ __html: JSON.stringify(lessonPlan.lesson_plan, null, 2) }}></div>
                     </p>
                 </div>
 
