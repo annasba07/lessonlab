@@ -1,9 +1,6 @@
 import openai
 from flask import session
 
-# Load your OpenAI API key
-openai.api_key = "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"
-
 def generate_lesson_plan(age, topic):
     # Your original generate_chat_content function
     # ...
